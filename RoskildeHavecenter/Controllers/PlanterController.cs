@@ -38,12 +38,12 @@ namespace PlanteShopService.Controllers
         }
 
         // GET api/<PlanterController>/5
-        //[HttpGet]
-        //[Route(("Type{type}"))]
-        //public IEnumerable<Plante> GetPlanteByType(string type)
-        //{
-        //    return _data.Find();
-        //}
+        [HttpGet]
+        [Route(("type/{type}"))]
+        public IEnumerable<Plante> GetPlanteByType(string type)
+        {
+            return _data.FindAll(plante => plante.PlanteType == type );
+        }
 
         // POST api/<PlanterController>
         [HttpPost]
